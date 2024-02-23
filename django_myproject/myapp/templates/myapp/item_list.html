@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item List</title>
+</head>
+<body>
+    <a href="/myapp2/"> Go to App2 Home</a>
+    <h1>Items</h1>
+    <ul>
+        {% for item in item_list %}
+        <li>{{ item.name }} - ${{ item.price }}</li>
+        {% endfor %}
+    </ul>
+      {% comment %} <img src="{% static 'images/photo2.jpg' %}" alt="Image">
+      <video width="320" height="240" controls>
+        <source src="{% static 'media/clip1.mp4' %} " type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>     {% endcomment %}
+    <h3> ------------------------ </h3>
+    <img src="{% static 'media2/photo1.jpg' %}" alt="My Photo">
+
+    <video width="320" height="240" controls>
+        <source src="{% static 'media2/clip2.mp4' %}" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+
+</body>
+</html>

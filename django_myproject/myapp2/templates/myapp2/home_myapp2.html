@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME MYAPP2</title>
+</head>
+<body>
+    <h1>HOME MYAPP2</h1>
+    <a href="/"> Back to Home</a>
+    {% if user.is_authenticated %}
+        <!-- Your video content here -->
+        <h2> Hello {{user}} </h2>
+        <h3> ------------------------ </h3>
+        <img src="{% static 'media2/photo1.jpg' %}" alt="My Photo">
+        <video width="320" height="240" controls>
+            <source src="{% static 'media2/clip2.mp4' %} " type="video/mp4" >
+            Your browser does not support the video tag.
+        </video>
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">log in</a> to view this page.</p>
+    {% endif %}
+
+    
+
+</body>
+</html>
